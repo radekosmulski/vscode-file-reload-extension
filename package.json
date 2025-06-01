@@ -1,0 +1,34 @@
+{
+  "name": "file-reloader",
+  "displayName": "File Reloader",
+  "description": "Reload a single file from disk, discarding unsaved changes",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "file-reloader.reloadFile",
+      "title": "Reload File from Disk"
+    }],
+    "keybindings": [{
+      "command": "file-reloader.reloadFile",
+      "key": "ctrl+alt+r",
+      "mac": "cmd+alt+r",
+      "when": "editorTextFocus"
+    }]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  }
+}
